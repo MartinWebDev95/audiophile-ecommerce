@@ -1,0 +1,233 @@
+.header{
+  background-color: var(--lightBlack);
+  padding-block: 2rem;
+}
+
+.headerContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.menuMobile{
+  width: 19px;
+  height: 19px;
+  background-color: transparent;
+  border: none;
+  position: relative;
+}
+
+.menuMobile:hover{
+  cursor: pointer;
+}
+
+.menuMobile span{
+  position: absolute;
+  width: 19px;
+  height: 3px;
+  background-color: var(--white);
+  left: 0;
+  transition: all .3s ease-in-out;
+}
+
+.menuMobile span:nth-child(1){
+  top: 0;
+}
+
+.menuMobile span:nth-child(2){
+  top: 8px;
+}
+
+.menuMobile span:nth-child(3){
+  bottom: 0;
+}
+
+.menuMobile.active span:nth-child(1){
+  transform: rotate(45deg);
+  top: 8px;
+}
+
+.menuMobile.active span:nth-child(2){
+  width: 0px;
+}
+
+.menuMobile.active span:nth-child(3){
+  transform: rotate(-45deg);
+  bottom: 8px;
+}
+
+.logo, .cart{
+  display: flex;
+}
+
+.navigation{
+  position: absolute;
+  background-color: var(--white);
+  width: 100%;
+  left: 0;
+  top: 89px;
+  transition: all .5s ease-in-out;
+}
+
+.navigation[aria-hidden="false"]{
+  height: 0vh;
+  overflow: auto;
+}
+
+.navigation[aria-hidden="true"]{
+  height: 100vh;
+  overflow: hidden;
+}
+
+.navigationList{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  margin-top: 4rem;
+}
+
+.navigationItem:first-of-type{
+  display: none;
+}
+
+.navigationItem{
+  width: 90%;
+}
+
+.navigationItem a{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--lightGray);
+  border-radius: 5px;
+}
+
+.navigationItem a img{
+  width: 120px;
+  margin-top: -3rem;
+}
+
+.itemTitle, .itemShop{
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: .1em;
+}
+
+.itemTitle{
+  color: var(--black);
+  font-size: 14px;
+}
+
+.itemShop{
+  margin-block: 1rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  color: var(--gray);
+  font-size: 12px;
+}
+
+.navigationItem:hover .itemShop{
+  color: var(--orange);
+  transition: all .2s ease-in-out;
+}
+
+/* TABLET */
+@media (min-width: 480px) {
+  .headerContainer{
+    gap: 2rem;
+  }
+
+  .navigationList{
+    flex-direction: row;
+    gap: 1rem;
+    width: 90%;
+    margin: 4rem auto;
+  }
+
+  .navigation{
+    border-radius: 0px 0px 10px 10px;
+  }
+
+  .navigation[aria-hidden="true"]{
+    height: 40vh;
+    overflow: hidden;
+  }
+
+  .logo{
+    flex: 1;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1000px) {
+  .headerContainer{
+    gap: 0;
+    width: 95%;
+  }
+
+  .menuMobile{
+    display: none;
+  }
+  
+  .navigation{
+    position: static;
+    background-color: transparent;
+    width: auto;
+    border-radius: 0;
+    transition: none;
+  }
+
+  .navigation[aria-hidden="false"], .navigation[aria-hidden="true"]{
+    height: auto;
+  }
+
+  .navigationList{
+    flex-direction: row;
+    gap: 1rem;
+    width: auto;
+    margin: 0;
+  }
+
+  .navigationItem:first-of-type{
+    display: block;
+  }
+
+  .navigationItem a{
+    background-color: transparent;
+    color: var(--white);
+  }
+  
+  .navigationItem a img{
+    display: none;
+  }
+
+  .itemShop{
+    display: none;
+  }
+
+  .itemTitle{
+    color: var(--white);
+  }
+  
+  .itemTitle:hover{
+    color: var(--orange);
+    transition: all .2s ease-in-out;
+  }
+
+  .logo{
+    flex: none;
+  }
+
+  .logo:hover, .cart:hover{
+    cursor: pointer;
+  }
+  
+  .logo:hover svg path, .cart:hover svg path{
+    fill: var(--orange);
+    transition: all .2s ease-in-out;
+  }
+}
