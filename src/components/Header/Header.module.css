@@ -166,7 +166,7 @@
 @media (min-width: 1000px) {
   .headerContainer{
     gap: 0;
-    width: 95%;
+    width: 80%;
   }
 
   .menuMobile{

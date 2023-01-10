@@ -5,6 +5,7 @@
   --lightOrange: #FBAF85;
   --orange: #D87D4A;
   --gray: #7D829D;
+  --darkGray: #303030;
   --lightGray: #F1F1F1;
 }
 
@@ -20,6 +21,7 @@ body{
   padding: 0;
   margin: 0;
   font-family: 'Manrope', sans-serif;
+  background-color: var(--lightBlack);
 }
 
 a{
