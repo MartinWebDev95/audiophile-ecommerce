@@ -3,7 +3,7 @@
 }
 
 .heroContainer{
- position: relative; 
+  position: relative;
 }
 
 .heroInfo{
@@ -73,14 +73,15 @@
 }
 
 @media (min-width: 1000px){
-  .heroSection{
+
+  .heroContainer{
     width: 80%;
     margin: 0 auto;
   }
 
   .heroInfo{
     width: 40%;
-    margin: inherit;
+    margin: initial;
   }
 
   .heroImage{
