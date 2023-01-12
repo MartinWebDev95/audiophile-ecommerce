@@ -1,0 +1,201 @@
+.sectionProducts{
+  background-color: var(--white);
+}
+
+.sectionProducts{
+  padding-block: 4rem;
+}
+
+.containerFirstSpeaker, .containerSecondSpeaker, .containerEarphones{
+  background-color: var(--orange);
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.containerSecondSpeaker, .containerEarphones{
+  margin-top: 2rem;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.containerEarphones{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.speaker{
+  background-image: url("./images/home/desktop/pattern-circles.svg");
+  background-position: 50% -7rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.speaker picture{
+  width: 160px;
+  margin: 0 auto;
+}
+
+.speakerInfo h2, .speakerInfo p{
+  color: var(--white);
+  text-align: center;
+}
+
+.speakerInfo h2{
+  text-transform: uppercase;
+  font-size: 2.5em;
+}
+
+.speakerLink{
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.speakerLink a{
+  background-color: var(--black);
+  color: var(--white);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 1rem 2rem;
+}
+
+.secondSpeaker{
+  position: relative;
+}
+
+.secondSpeakerInfo{
+  position: absolute;
+  top: 25%;
+  left: 5%;
+}
+
+.secondSpeakerInfo h2, .earphonesInfo h2{
+  text-transform: uppercase;
+  padding-bottom: 2rem;
+}
+
+.secondSpeakerLink a{
+  background-color: transparent;
+  color: var(--black);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 1rem 2rem;
+  border: 1px solid var(--black);
+}
+
+.earphonesImage picture img, .earphonesInfo{
+  border-radius: 5px;
+}
+
+.earphonesInfo{
+  background-color: var(--lightGray);
+  padding: 2rem;
+}
+
+.earphonesLink a{
+  background-color: transparent;
+  color: var(--black);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 1rem 2rem;
+  border: 1px solid var(--black);
+}
+
+/* TABLET */
+@media (min-width: 480px) {
+  .sectionProducts{
+    padding-top: 0rem;
+  }
+
+  .speaker{
+    background-position: 50% -15rem;
+    padding-block: 4rem;
+  }
+
+  .speaker picture{
+    width: 200px;
+  }
+
+  .speakerInfo{
+    width: 60%;
+  }
+
+  .secondSpeaker picture img{
+    width: 100%;
+  }
+
+  .containerEarphones{
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .earphonesImage, .earphonesInfo{
+    width: 50%;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1000px) {
+  .sectionProducts{
+    padding-bottom: 6rem;
+  }
+
+  .containerFirstSpeaker, .containerSecondSpeaker, .containerEarphones{
+    width: 80%;
+  }
+
+  .speaker{
+    flex-direction: row;
+    padding-bottom: 0;
+    padding-inline: 4rem;
+    gap: 4rem;
+    background-position: -15rem;
+  }
+
+  .speaker picture{
+    width: 500px;
+  }
+
+  .speakerInfo{
+    width: 60%;
+  }
+
+  .speakerInfo h2, .speakerInfo p{
+    color: var(--white);
+    text-align: left;
+  }
+
+  .speakerLink{
+    justify-content: flex-start;
+  }
+
+  .speakerLink:hover a{
+    background-color: var(--gray);
+    color: var(--black);
+    transition: all .3s ease-in-out;
+  }
+
+  .secondSpeakerLink:hover a, .earphonesLink:hover a{
+    background-color: var(--black);
+    color: var(--white);
+    transition: all .3s ease-in-out;    
+  }
+
+  .containerEarphones{
+    gap: 2rem;
+  }
+
+  .secondSpeakerInfo h2, .earphonesInfo h2{
+    font-size: 2em;
+    padding-bottom: 1rem;
+  }
+}

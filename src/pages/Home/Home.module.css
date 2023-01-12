@@ -2,3 +2,11 @@
   background-color: var(--white);
   padding-block: 1rem;
 }
+
+/* DESKTOP */
+@media (min-width: 1000px) {
+  .sectionCategories{
+    padding-block: 2rem;
+  }
+}
+
