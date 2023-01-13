@@ -4,6 +4,7 @@ import ListCategories from '../../components/ListCategories/ListCategories';
 import SectionProducts from '../../components/SectionProducts/SectionProducts';
 import Footer from '../../components/Footer/Footer';
 import styles from './Home.module.css';
+import SectionInfo from '../../components/SectionInfo/SectionInfo';
 
 function Home() {
   return (
@@ -15,6 +16,7 @@ function Home() {
           <ListCategories />
         </section>
         <SectionProducts />
+        <SectionInfo />
       </main>
       <Footer />
     </>
