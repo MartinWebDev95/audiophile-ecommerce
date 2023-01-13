@@ -28,7 +28,7 @@ a{
   text-decoration: none;
 }
 
-ul{
+ul, p{
   padding: 0;
   margin: 0;
   list-style: none;
