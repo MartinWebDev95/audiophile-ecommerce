@@ -96,6 +96,10 @@
     color: var(--white);
   }
 
+  .itemTitle.linkActive[type='navbar']{
+    color: var(--orange);
+  }
+
   .itemTitle[type='navbar']:hover{
     color: var(--orange);
     transition: all .2s ease-in-out;
