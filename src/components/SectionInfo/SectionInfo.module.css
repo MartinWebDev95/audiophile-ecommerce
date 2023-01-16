@@ -1,6 +1,6 @@
 .sectionInfo{
   background-color: var(--white);
-  padding-bottom: 4rem;
+  padding-block: 4rem;
 }
 
 .containerSectionInfo{
@@ -40,10 +40,6 @@
 
 /* DESKTOP */
 @media (min-width: 1000px) {
-  .sectionInfo{
-    padding-bottom: 6rem;
-  }
-
   .containerSectionInfo{
     width: 80%;
     grid-template-rows: repeat(1, auto);

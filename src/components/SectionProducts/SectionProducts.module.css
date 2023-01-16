@@ -3,7 +3,7 @@
 }
 
 .sectionProducts{
-  padding-block: 4rem;
+  padding-top: 4rem;
 }
 
 .containerFirstSpeaker, .containerSecondSpeaker, .containerEarphones{
@@ -145,10 +145,7 @@
 
 /* DESKTOP */
 @media (min-width: 1000px) {
-  .sectionProducts{
-    padding-bottom: 6rem;
-  }
-
+  
   .containerFirstSpeaker, .containerSecondSpeaker, .containerEarphones{
     width: 80%;
   }

@@ -1,12 +1,13 @@
 .sectionCategories{
   background-color: var(--white);
-  padding-block: 1rem;
+  padding-top: 1rem;
 }
 
-/* DESKTOP */
-@media (min-width: 1000px) {
+/* TABLET */
+@media (min-width: 480px) {
   .sectionCategories{
-    padding-block: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
   }
 }
 

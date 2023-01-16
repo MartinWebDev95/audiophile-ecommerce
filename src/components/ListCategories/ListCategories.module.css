@@ -58,7 +58,7 @@
     flex-direction: row;
     gap: 1rem;
     width: 90%;
-    margin: 4rem auto;
+    margin: 4rem auto 0rem auto;
   }
 }
 
