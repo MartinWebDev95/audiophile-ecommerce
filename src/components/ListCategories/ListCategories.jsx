@@ -12,7 +12,7 @@ function ListCategories({ type = '' }) {
         </Link>
       </li>
       <li className={styles.navigationItem} type={type}>
-        <Link to="headphones">
+        <Link to="/headphones">
           <img src="./images/shared/desktop/image-headphones.png" alt="" />
           <span className={styles.itemTitle} type={type}>
             Headphones
@@ -24,7 +24,7 @@ function ListCategories({ type = '' }) {
         </Link>
       </li>
       <li className={styles.navigationItem} type={type}>
-        <Link to="speakers">
+        <Link to="/speakers">
           <img src="./images/shared/desktop/image-speakers.png" alt="" />
           <span className={styles.itemTitle} type={type}>
             Speakers
@@ -36,7 +36,7 @@ function ListCategories({ type = '' }) {
         </Link>
       </li>
       <li className={styles.navigationItem} type={type}>
-        <Link to="earphones">
+        <Link to="/earphones">
           <img src="./images/shared/desktop/image-earphones.png" alt="" />
           <span className={styles.itemTitle} type={type}>
             Earphones
