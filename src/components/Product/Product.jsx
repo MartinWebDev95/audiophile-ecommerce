@@ -18,7 +18,7 @@ function Product({ product }) {
           {product.description}
         </p>
         <div className={styles.productLink}>
-          <Link to="/">
+          <Link to={product.slug}>
             See Product
           </Link>
         </div>
