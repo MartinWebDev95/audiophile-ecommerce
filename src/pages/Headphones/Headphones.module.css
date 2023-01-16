@@ -1,0 +1,33 @@
+.main{
+  background-color: var(--white);
+}
+
+.sectionCategories{
+  background-color: var(--white);
+  padding-top: 1rem;
+}
+
+.title{
+  border-top: 1px solid var(--gray);
+  text-align: center;
+  color: var(--white);
+  text-transform: uppercase;
+  margin: 0;
+  padding-block: 2rem;
+  background-color: var(--lightBlack);
+}
+
+/* DESKTOP */
+@media (min-width: 480px) {
+  .sectionCategories{
+    padding-top: 0rem;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1000px) {
+  .title{
+    padding-block: 3rem;
+    font-size: 2.4em;
+  }
+}
