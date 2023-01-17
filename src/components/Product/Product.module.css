@@ -1,4 +1,4 @@
-.containerProduct{
+.containerProduct, .containerProductDetail{
   padding-top: 4rem;
   display: flex;
   flex-direction: column;
@@ -6,15 +6,19 @@
   row-gap: 2rem;
 }
 
+.containerProductDetail{
+  padding-top: 0;
+}
+
 .containerProduct:last-of-type{
   padding-bottom: 2rem;
 }
 
-.containerProduct picture img{
+.containerProduct picture img, .containerProductDetail picture img{
   border-radius: 5px;
 }
 
-.newProduct{
+.newProduct, .newProductDetail{
   color: var(--orange);
   text-transform: uppercase;
   letter-spacing: .5em;
@@ -22,7 +26,11 @@
   padding-bottom: 1rem;
 }
 
-.containerProduct div h2{
+.newProductDetail{
+  text-align: left;
+}
+
+.containerProduct div h2, .containerProductDetail div h2{
   text-align: center;
   text-transform: uppercase;
   margin: 0 auto;
@@ -31,10 +39,26 @@
   max-width: 12ch;
 }
 
-.productDescription{
+.containerProductDetail div h2{
+  text-align: left;
+  margin: 0;
+}
+
+.productDescription, .productDetailDescription{
   text-align: center;
   color: var(--gray);
   line-height: 1.7em;
+}
+
+.productDetailDescription{
+  text-align: left;
+}
+
+.productDetailPrice{
+  color: var(--black);
+  font-weight: bold;
+  padding-block: 2rem;
+  letter-spacing: .1em;
 }
 
 .productLink{
@@ -53,12 +77,64 @@
   padding: 1rem 2rem;
 }
 
+.productDetailCart{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.containerQuantityInput{
+  display: flex;
+  align-items: center;
+}
+
+.containerQuantityInput input{
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  background-color: var(--lightGray);
+  color: var(--black);
+  font-weight: bold;
+  border: none;
+}
+
+.containerQuantityInput input::placeholder{
+  color: var(--black);
+}
+
+.productDetailCart .containerQuantityInput button{
+  background-color: var(--lightGray);
+  color: var(--gray);
+  padding: 0;
+  height: 40px;
+  width: 40px;
+}
+
+
+.productDetailCart button{
+  background-color: var(--orange);
+  border: none;
+  color: var(--white);
+  text-transform: uppercase;
+  padding: .8rem 1.5rem;
+  font-weight: bold;
+}
+
+.productDetailCart .containerQuantityInput button, .productDetailCart button{
+  cursor: pointer;
+}
 
 /* TABLET */
 @media (min-width: 480px){
   .containerProduct:last-of-type{
     padding-bottom: 4rem;
-  } 
+  }
+  
+  .containerProductDetail{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 4rem;
+  }
 }
 
 /* DESKTOP */
@@ -92,8 +168,14 @@
     padding-top: 2rem;
   }
 
-  .productLink a:hover{
+  .productLink a:hover, .productDetailCart button:hover{
     background-color: var(--lightOrange);
     transition: all .2s ease-in-out;
+  }
+
+  .productDetailCart .containerQuantityInput button:hover{
+    background-color: var(--gray);
+    color: var(--orange);
+    transition: all .2s ease-in-out;    
   }
 }
