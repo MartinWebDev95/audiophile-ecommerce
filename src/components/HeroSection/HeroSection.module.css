@@ -14,7 +14,7 @@
 
 .heroImage{
   position: absolute;
-  background-image: url("./images/home/mobile/image-hero.jpg");
+  background-image: url("/images/home/mobile/image-hero.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -64,7 +64,7 @@
 
 @media (min-width: 480px){
   .heroImage{
-    background-image: url("./images/home/tablet/image-hero.jpg");
+    background-image: url("/images/home/tablet/image-hero.jpg");
   }
 
   .heroInfo{
@@ -85,7 +85,7 @@
   }
 
   .heroImage{
-    background-image: url("./images/home/desktop/image-hero.jpg");
+    background-image: url("/images/home/desktop/image-hero.jpg");
     left: 70px;
   }
 

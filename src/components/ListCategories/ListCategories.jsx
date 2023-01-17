@@ -17,7 +17,7 @@ function ListCategories({ type = '' }) {
         <NavLink to="/headphones">
           {({ isActive }) => (
             <>
-              <img src="./images/shared/desktop/image-headphones.png" alt="" />
+              <img src="/images/shared/desktop/image-headphones.png" alt="" />
               <span className={`${styles.itemTitle} ${isActive ? styles.linkActive : ''}`} type={type}>
                 Headphones
               </span>
@@ -33,7 +33,7 @@ function ListCategories({ type = '' }) {
         <NavLink to="/speakers">
           {({ isActive }) => (
             <>
-              <img src="./images/shared/desktop/image-speakers.png" alt="" />
+              <img src="/images/shared/desktop/image-speakers.png" alt="" />
               <span className={`${styles.itemTitle} ${isActive ? styles.linkActive : ''}`} type={type}>
                 Speakers
               </span>
@@ -49,7 +49,7 @@ function ListCategories({ type = '' }) {
         <NavLink to="/earphones">
           {({ isActive }) => (
             <>
-              <img src="./images/shared/desktop/image-earphones.png" alt="" />
+              <img src="/images/shared/desktop/image-earphones.png" alt="" />
               <span className={`${styles.itemTitle} ${isActive ? styles.linkActive : ''}`} type={type}>
                 Earphones
               </span>

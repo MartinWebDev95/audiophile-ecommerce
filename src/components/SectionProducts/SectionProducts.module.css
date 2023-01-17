@@ -26,7 +26,7 @@
 }
 
 .speaker{
-  background-image: url("./images/home/desktop/pattern-circles.svg");
+  background-image: url("/images/home/desktop/pattern-circles.svg");
   background-position: 50% -7rem;
   background-repeat: no-repeat;
   background-size: cover;
