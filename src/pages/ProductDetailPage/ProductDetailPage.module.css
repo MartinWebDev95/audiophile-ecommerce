@@ -1,0 +1,46 @@
+.main{
+  background-color: var(--white);
+}
+
+.sectionCategories{
+  background-color: var(--white);
+  padding-top: 1rem;
+}
+
+.sectionProductDetail{
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
+
+.linkGoBack{
+  color: var(--gray);
+  display: inline-block;
+  padding-block: 2rem;
+}
+
+/* TABLET */
+@media (min-width: 480px) {
+  .sectionCategories{
+    padding-top: 0rem;
+  }
+
+  .sectionProductDetail{
+    padding-bottom: 3rem;
+  } 
+  
+  .linkGoBack{
+    padding-block: 3rem;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1000px){
+  .sectionProductDetail{
+    width: 80%;
+  }
+  
+  .linkGoBack{
+    padding-block: 4rem;
+  }
+}
