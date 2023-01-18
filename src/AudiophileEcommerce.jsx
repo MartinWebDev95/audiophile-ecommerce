@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './AudiophileEcommerce.module.css';
 import Home from './pages/Home/Home';
 import CategoryPage from './pages/CategoryPage/CategoryPage';
@@ -6,17 +6,15 @@ import ProductDetailPage from './pages/ProductDetailPage/ProductDetailPage';
 
 function AudiophileEcommerce() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route index path="/" element={<Home />} />
-        <Route path="/headphones" element={<CategoryPage />} />
-        <Route path="/headphones/:productSlug" element={<ProductDetailPage />} />
-        <Route path="/speakers" element={<CategoryPage />} />
-        <Route path="/speakers/:productSlug" element={<ProductDetailPage />} />
-        <Route path="/earphones" element={<CategoryPage />} />
-        <Route path="/earphones/:productSlug" element={<ProductDetailPage />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route index path="/" element={<Home />} />
+      <Route path="/headphones" element={<CategoryPage />} />
+      <Route path="/headphones/:productSlug" element={<ProductDetailPage />} />
+      <Route path="/speakers" element={<CategoryPage />} />
+      <Route path="/speakers/:productSlug" element={<ProductDetailPage />} />
+      <Route path="/earphones" element={<CategoryPage />} />
+      <Route path="/earphones/:productSlug" element={<ProductDetailPage />} />
+    </Routes>
   );
 }
 
