@@ -10,13 +10,15 @@
 .sectionProductDetail{
   width: 90%;
   margin: 0 auto;
-  padding-bottom: 2rem;
 }
 
-.linkGoBack{
+.buttonGoBack{
   color: var(--gray);
-  display: inline-block;
-  padding-block: 2rem;
+  font-size: 1em;
+  background-color: transparent;
+  border: none;
+  margin-block: 2rem;
+  cursor: pointer;
 }
 
 /* TABLET */
@@ -25,12 +27,8 @@
     padding-top: 0rem;
   }
 
-  .sectionProductDetail{
-    padding-bottom: 3rem;
-  } 
-  
-  .linkGoBack{
-    padding-block: 3rem;
+  .buttonGoBack{
+    margin-block: 3rem;
   }
 }
 
@@ -40,7 +38,7 @@
     width: 80%;
   }
   
-  .linkGoBack{
-    padding-block: 4rem;
+  .buttonGoBack{
+    margin-block: 4rem;
   }
 }
