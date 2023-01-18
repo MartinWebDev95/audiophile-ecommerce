@@ -15,7 +15,7 @@ function HeroSection() {
             build quality made for the passionate music enthusiast.
           </p>
           <div className={styles.infoLink}>
-            <Link to="/">
+            <Link to="/headphones/xx99-mark-two-headphones">
               See Product
             </Link>
           </div>

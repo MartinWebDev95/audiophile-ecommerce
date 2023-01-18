@@ -18,7 +18,7 @@ function SectionProducts() {
               built to deliver truly remarkable sound.
             </p>
             <div className={styles.speakerLink}>
-              <Link to="/">
+              <Link to="/speakers/zx9-speaker">
                 See Product
               </Link>
             </div>
@@ -35,7 +35,7 @@ function SectionProducts() {
           <div className={styles.secondSpeakerInfo}>
             <h2>ZX7 Speaker</h2>
             <div className={styles.secondSpeakerLink}>
-              <Link to="/">
+              <Link to="/speakers/zx7-speaker">
                 See Product
               </Link>
             </div>
@@ -53,7 +53,7 @@ function SectionProducts() {
         <div className={styles.earphonesInfo}>
           <h2>YX1 Earphones</h2>
           <div className={styles.earphonesLink}>
-            <Link to="/">
+            <Link to="/earphones/yx1-earphones">
               See Product
             </Link>
           </div>

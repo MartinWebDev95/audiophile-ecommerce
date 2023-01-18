@@ -73,7 +73,6 @@
 }
 
 @media (min-width: 1000px){
-
   .heroContainer{
     width: 80%;
     margin: 0 auto;
@@ -95,5 +94,10 @@
 
   .infoLink{
     justify-content: flex-start;
+  }
+
+  .infoLink a:hover{
+    background-color: var(--lightOrange);
+    transition: all .2s ease-in-out;
   }
 }
