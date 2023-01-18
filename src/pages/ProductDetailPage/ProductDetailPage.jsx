@@ -9,6 +9,7 @@ import Product from '../../components/Product/Product';
 import styles from './ProductDetailPage.module.css';
 import SectionFeatures from '../../components/SectionFeatures/SectionFeatures';
 import SectionImages from '../../components/SectionImages/SectionImages';
+import ListSuggestedProducts from '../../components/ListSuggestedProducts/ListSuggestedProducts';
 
 function ProductDetailPage() {
   const { productSlug } = useParams();
@@ -45,6 +46,8 @@ function ProductDetailPage() {
         />
 
         <SectionImages gallery={productDetail[0]?.gallery} />
+
+        <ListSuggestedProducts suggestedProducts={productDetail[0]?.others} />
 
         <section className={styles.sectionCategories}>
           <ListCategories />
