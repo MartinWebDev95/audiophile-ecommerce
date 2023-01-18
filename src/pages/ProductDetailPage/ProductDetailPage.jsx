@@ -8,6 +8,7 @@ import data from '../../products.json';
 import Product from '../../components/Product/Product';
 import styles from './ProductDetailPage.module.css';
 import SectionFeatures from '../../components/SectionFeatures/SectionFeatures';
+import SectionImages from '../../components/SectionImages/SectionImages';
 
 function ProductDetailPage() {
   const { productSlug } = useParams();
@@ -42,6 +43,8 @@ function ProductDetailPage() {
           features={productDetail[0]?.features}
           includedItems={productDetail[0]?.includedItems}
         />
+
+        <SectionImages gallery={productDetail[0]?.gallery} />
 
         <section className={styles.sectionCategories}>
           <ListCategories />
