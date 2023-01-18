@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding-bottom: 2rem;
+  padding-bottom: 4rem;
 }
 
 .galleryFirst img, .gallerySecond img, .galleryThird img{
@@ -15,9 +15,8 @@
 @media (min-width: 480px){
   .sectionGallery{
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 40% 1fr;
     grid-template-rows: repeat(2, 1fr);
-    padding-bottom: 3rem;
   }
 
   .galleryFirst{
@@ -37,7 +36,7 @@
   }    
 }
 
-@media (min-width: 480px){
+@media (min-width: 1000px){
   .sectionGallery{
     width: 80%;
   }

@@ -163,6 +163,10 @@
     margin: 0;
   }
 
+  .containerProductDetail div h2{
+    font-size: 2.5em;
+  }
+
   .productLink{
     justify-content: flex-start;
     padding-top: 2rem;
