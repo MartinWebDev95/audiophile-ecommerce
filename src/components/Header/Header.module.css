@@ -58,7 +58,7 @@
   bottom: 8px;
 }
 
-.logo, .cart{
+.logo{
   display: flex;
 }
 
@@ -81,6 +81,15 @@
 .navigation[aria-hidden="true"]{
   height: 100vh;
   overflow: hidden;
+}
+
+.cart{
+  background-color: transparent;
+  border: none; 
+}
+
+.logo:hover, .cart:hover{
+  cursor: pointer;
 }
 
 /* TABLET */
@@ -129,10 +138,6 @@
 
   .logo{
     flex: none;
-  }
-
-  .logo:hover, .cart:hover{
-    cursor: pointer;
   }
   
   .logo:hover svg path, .cart:hover svg path{
