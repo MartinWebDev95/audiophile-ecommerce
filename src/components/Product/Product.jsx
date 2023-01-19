@@ -1,19 +1,10 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import useQuantityInput from '../../hooks/useQuantityInput';
+import QuantityInput from '../QuantityInput/QuantityInput';
 import styles from './Product.module.css';
 
 function Product({ product = {}, detail = false }) {
-  const [quantity, setQuantity] = useState(1);
-
-  const handleIncrement = () => {
-    setQuantity(quantity + 1);
-  };
-
-  const handleDecrement = () => {
-    if (quantity === 1) return;
-
-    setQuantity(quantity - 1);
-  };
+  const { quantity, handleIncrement, handleDecrement } = useQuantityInput();
 
   return (
     !detail
@@ -68,17 +59,11 @@ function Product({ product = {}, detail = false }) {
             </p>
 
             <div className={styles.productDetailCart}>
-              <div className={styles.containerQuantityInput}>
-                <button type="button" onClick={handleIncrement}>
-                  +
-                </button>
-
-                <input type="number" id="quantity" name="quantity" value={quantity} />
-
-                <button type="button" onClick={handleDecrement}>
-                  -
-                </button>
-              </div>
+              <QuantityInput
+                handleDecrement={handleDecrement}
+                handleIncrement={handleIncrement}
+                quantity={quantity}
+              />
 
               <button type="button" className={styles.buttonAddToCart}>
                 Add to cart

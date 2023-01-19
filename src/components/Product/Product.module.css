@@ -83,44 +83,13 @@
   gap: 1rem;
 }
 
-.containerQuantityInput{
-  display: flex;
-  align-items: center;
-}
-
-.containerQuantityInput input{
-  width: 40px;
-  height: 40px;
-  text-align: center;
-  background-color: var(--lightGray);
-  color: var(--black);
-  font-weight: bold;
-  border: none;
-}
-
-.containerQuantityInput input::placeholder{
-  color: var(--black);
-}
-
-.productDetailCart .containerQuantityInput button{
-  background-color: var(--lightGray);
-  color: var(--gray);
-  padding: 0;
-  height: 40px;
-  width: 40px;
-}
-
-
-.productDetailCart button{
+.productDetailCart .buttonAddToCart{
   background-color: var(--orange);
   border: none;
   color: var(--white);
   text-transform: uppercase;
   padding: .8rem 1.5rem;
   font-weight: bold;
-}
-
-.productDetailCart .containerQuantityInput button, .productDetailCart button{
   cursor: pointer;
 }
 
@@ -172,14 +141,8 @@
     padding-top: 2rem;
   }
 
-  .productLink a:hover, .productDetailCart button:hover{
+  .productLink a:hover, .productDetailCart .buttonAddToCart:hover{
     background-color: var(--lightOrange);
     transition: all .2s ease-in-out;
-  }
-
-  .productDetailCart .containerQuantityInput button:hover{
-    background-color: var(--gray);
-    color: var(--orange);
-    transition: all .2s ease-in-out;    
   }
 }
