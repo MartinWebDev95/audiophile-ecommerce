@@ -1,7 +1,20 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Product.module.css';
 
 function Product({ product = {}, detail = false }) {
+  const [quantity, setQuantity] = useState(1);
+
+  const handleIncrement = () => {
+    setQuantity(quantity + 1);
+  };
+
+  const handleDecrement = () => {
+    if (quantity === 1) return;
+
+    setQuantity(quantity - 1);
+  };
+
   return (
     !detail
       ? (
@@ -56,13 +69,13 @@ function Product({ product = {}, detail = false }) {
 
             <div className={styles.productDetailCart}>
               <div className={styles.containerQuantityInput}>
-                <button type="button">
+                <button type="button" onClick={handleIncrement}>
                   +
                 </button>
 
-                <input type="number" id="quantity" name="quantity" placeholder="1" />
+                <input type="number" id="quantity" name="quantity" value={quantity} />
 
-                <button type="button">
+                <button type="button" onClick={handleDecrement}>
                   -
                 </button>
               </div>

@@ -1,5 +1,4 @@
 import { Route, Routes } from 'react-router-dom';
-import './AudiophileEcommerce.module.css';
 import Home from './pages/Home/Home';
 import CategoryPage from './pages/CategoryPage/CategoryPage';
 import ProductDetailPage from './pages/ProductDetailPage/ProductDetailPage';
