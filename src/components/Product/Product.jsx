@@ -1,10 +1,28 @@
 import { Link } from 'react-router-dom';
+import useCart from '../../hooks/useCart';
 import useQuantityInput from '../../hooks/useQuantityInput';
 import QuantityInput from '../QuantityInput/QuantityInput';
 import styles from './Product.module.css';
 
 function Product({ product = {}, detail = false }) {
+  const { cart, setCart } = useCart();
   const { quantity, handleIncrement, handleDecrement } = useQuantityInput();
+
+  const handleAddProductToCart = () => {
+    const {
+      id, cartImage, shortName, price,
+    } = product;
+
+    const productCart = {
+      id,
+      cartImage,
+      shortName,
+      quantity,
+      price,
+    };
+
+    setCart([...cart, productCart]);
+  };
 
   return (
     !detail
@@ -65,7 +83,11 @@ function Product({ product = {}, detail = false }) {
                 quantity={quantity}
               />
 
-              <button type="button" className={styles.buttonAddToCart}>
+              <button
+                type="button"
+                className={styles.buttonAddToCart}
+                onClick={handleAddProductToCart}
+              >
                 Add to cart
               </button>
             </div>

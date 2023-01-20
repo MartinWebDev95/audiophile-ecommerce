@@ -6,7 +6,7 @@ import QuantityInput from '../QuantityInput/QuantityInput';
 import styles from './Cart.module.css';
 
 function Cart({ openCart, setOpenCart }) {
-  const { cart } = useCart();
+  const { cart, setCart } = useCart();
   const { quantity, handleIncrement, handleDecrement } = useQuantityInput();
 
   const handleClick = (e) => {
@@ -15,8 +15,6 @@ function Cart({ openCart, setOpenCart }) {
     setOpenCart(true);
   };
 
-  console.log(cart);
-
   return (
     <div
       className={styles.cartBackground}
@@ -24,44 +22,69 @@ function Cart({ openCart, setOpenCart }) {
       onClick={handleClick}
     >
       <div className={styles.cartContainer}>
-        {/* <h2 className={styles.cartTitleEmpty}>Your cart is empty</h2>
-        <img className={styles.cartImageEmpty} src="/images/cart/empty-cart.png" alt="Cart" /> */}
-        <section className={styles.cartHeader}>
-          <p className={styles.quantityCart}>Cart (1)</p>
-          <button type="button" className={styles.cartRemoveAll}>Remove all</button>
-        </section>
-        <section className={styles.containerCartList}>
-          <ul className={styles.listCartItem}>
-            <li className={styles.cartItem}>
-              <div className={styles.containerCartItem}>
-                <div className={styles.infoCartItem}>
-                  <img src="/images/cart/image-yx1-earphones.jpg" alt="Cosa" />
-                  <div className={styles.detailCartItem}>
-                    <p className={styles.nameCartItem}>Nombre producto</p>
-                    <p className={styles.priceCartItem}>$ 2,999</p>
-                  </div>
-                </div>
-                <QuantityInput
-                  handleDecrement={handleDecrement}
-                  handleIncrement={handleIncrement}
-                  quantity={quantity}
-                />
-              </div>
-            </li>
-          </ul>
-        </section>
-        <section className={styles.containerCheckout}>
-          <div className={styles.cartTotalPrice}>
-            <p>Total:</p>
-            <p>$ 5,320</p>
+        {cart.length === 0 ? (
+          <div className={styles.cartContainerEmpty}>
+            <h2 className={styles.cartTitleEmpty}>Your cart is empty</h2>
+            <img className={styles.cartImageEmpty} src="/images/cart/empty-cart.png" alt="Empty Cart" />
           </div>
-          <button
-            type="button"
-            className={styles.buttonCheckout}
-          >
-            Checkout
-          </button>
-        </section>
+        ) : (
+          <>
+            <section className={styles.cartHeader}>
+              <p className={styles.quantityCart}>
+                Cart (
+                {`${cart.length}`}
+                )
+              </p>
+
+              <button
+                type="button"
+                className={styles.cartRemoveAll}
+                onClick={() => setCart([])}
+              >
+                Remove all
+              </button>
+            </section>
+
+            <section className={styles.containerCartList}>
+              <ul className={styles.listCartItem}>
+                {cart.map((item) => (
+                  <li key={item.id} className={styles.cartItem}>
+                    <div className={styles.containerCartItem}>
+                      <div className={styles.infoCartItem}>
+                        <img src={item.cartImage} alt={item.shortName} />
+
+                        <div className={styles.detailCartItem}>
+                          <p className={styles.nameCartItem}>{item.shortName}</p>
+                          <p className={styles.priceCartItem}>{`$ ${item.price}`}</p>
+                        </div>
+                      </div>
+
+                      <QuantityInput
+                        handleDecrement={handleDecrement}
+                        handleIncrement={handleIncrement}
+                        quantity={item.quantity}
+                      />
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            <section className={styles.containerCheckout}>
+              <div className={styles.cartTotalPrice}>
+                <p>Total:</p>
+                <p>$ 5,320</p>
+              </div>
+
+              <button
+                type="button"
+                className={styles.buttonCheckout}
+              >
+                Checkout
+              </button>
+            </section>
+          </>
+        )}
       </div>
     </div>
   );
