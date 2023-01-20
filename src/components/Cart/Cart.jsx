@@ -1,10 +1,12 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
+import useCart from '../../hooks/useCart';
 import useQuantityInput from '../../hooks/useQuantityInput';
 import QuantityInput from '../QuantityInput/QuantityInput';
 import styles from './Cart.module.css';
 
 function Cart({ openCart, setOpenCart }) {
+  const { cart } = useCart();
   const { quantity, handleIncrement, handleDecrement } = useQuantityInput();
 
   const handleClick = (e) => {
@@ -12,6 +14,8 @@ function Cart({ openCart, setOpenCart }) {
 
     setOpenCart(true);
   };
+
+  console.log(cart);
 
   return (
     <div
