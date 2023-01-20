@@ -1,13 +1,11 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import useCart from '../../hooks/useCart';
-import useQuantityInput from '../../hooks/useQuantityInput';
-import QuantityInput from '../QuantityInput/QuantityInput';
+import ProductCart from '../ProductCart/ProductCart';
 import styles from './Cart.module.css';
 
 function Cart({ openCart, setOpenCart }) {
   const { cart, setCart } = useCart();
-  const { quantity, handleIncrement, handleDecrement } = useQuantityInput();
 
   const handleClick = (e) => {
     if (!e.target.getAttribute('aria-hidden')) return;
@@ -48,24 +46,7 @@ function Cart({ openCart, setOpenCart }) {
             <section className={styles.containerCartList}>
               <ul className={styles.listCartItem}>
                 {cart.map((item) => (
-                  <li key={item.id} className={styles.cartItem}>
-                    <div className={styles.containerCartItem}>
-                      <div className={styles.infoCartItem}>
-                        <img src={item.cartImage} alt={item.shortName} />
-
-                        <div className={styles.detailCartItem}>
-                          <p className={styles.nameCartItem}>{item.shortName}</p>
-                          <p className={styles.priceCartItem}>{`$ ${item.price}`}</p>
-                        </div>
-                      </div>
-
-                      <QuantityInput
-                        handleDecrement={handleDecrement}
-                        handleIncrement={handleIncrement}
-                        quantity={item.quantity}
-                      />
-                    </div>
-                  </li>
+                  <ProductCart key={item.id} item={item} />
                 ))}
               </ul>
             </section>

@@ -63,30 +63,6 @@
   margin-bottom: 1rem;
 }
 
-.containerCartItem, .containerCartItem .infoCartItem{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.cartItem{
-  margin-bottom: .5rem;
-}
-
-.infoCartItem img{
-  width: 50px;
-}
-
-.detailCartItem .nameCartItem{
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-.detailCartItem .priceCartItem, .detailCartItem .nameCartItem{
-  font-size: .8em;
-}
-
 .containerCheckout{
   display: flex;
   flex-direction: column;
