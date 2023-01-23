@@ -5,7 +5,9 @@ import ProductCart from '../ProductCart/ProductCart';
 import styles from './Cart.module.css';
 
 function Cart({ openCart, setOpenCart }) {
-  const { cart, setCart } = useCart();
+  const {
+    cart, setCart, totalCart, setTotalCart,
+  } = useCart();
 
   const handleClick = (e) => {
     if (!e.target.getAttribute('aria-hidden')) return;
@@ -37,7 +39,10 @@ function Cart({ openCart, setOpenCart }) {
               <button
                 type="button"
                 className={styles.cartRemoveAll}
-                onClick={() => setCart([])}
+                onClick={() => {
+                  setCart([]);
+                  setTotalCart(0);
+                }}
               >
                 Remove all
               </button>
@@ -46,7 +51,12 @@ function Cart({ openCart, setOpenCart }) {
             <section className={styles.containerCartList}>
               <ul className={styles.listCartItem}>
                 {cart.map((item) => (
-                  <ProductCart key={item.id} item={item} />
+                  <ProductCart
+                    key={item.id}
+                    item={item}
+                    totalCart={totalCart}
+                    setTotalCart={setTotalCart}
+                  />
                 ))}
               </ul>
             </section>
@@ -54,7 +64,9 @@ function Cart({ openCart, setOpenCart }) {
             <section className={styles.containerCheckout}>
               <div className={styles.cartTotalPrice}>
                 <p>Total:</p>
-                <p>$ 5,320</p>
+                <p>
+                  {`$ ${totalCart}`}
+                </p>
               </div>
 
               <button

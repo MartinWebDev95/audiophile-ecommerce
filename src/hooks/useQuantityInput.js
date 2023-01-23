@@ -13,7 +13,9 @@ function useQuantityInput(quantityProduct = 1) {
     setQuantity(quantity - 1);
   };
 
-  return { quantity, handleIncrement, handleDecrement };
+  return {
+    quantity, handleIncrement, handleDecrement,
+  };
 }
 
 export default useQuantityInput;
