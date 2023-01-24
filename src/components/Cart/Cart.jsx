@@ -54,6 +54,7 @@ function Cart({ openCart, setOpenCart }) {
                   <ProductCart
                     key={item.id}
                     item={item}
+                    idProduct={item.id}
                     totalCart={totalCart}
                     setTotalCart={setTotalCart}
                   />
