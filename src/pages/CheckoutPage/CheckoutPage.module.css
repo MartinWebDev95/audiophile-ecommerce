@@ -1,0 +1,307 @@
+.main{
+  background-color: var(--lightGray);
+}
+
+.sectionGoBack{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
+
+.containerForm, 
+.containerSummary{
+  background-color: var(--white);
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.containerForm .title, 
+.containerSummary .title{
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.form .fieldsetBilling,
+.form .fieldsetShipping,
+.form .fieldsetPayment{
+  border: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.form .fieldsetPayment{
+  margin-bottom: 0rem;
+}
+
+.fieldsetBilling .legend, 
+.fieldsetShipping .legend, 
+.fieldsetPayment .legend{
+  padding: 0;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: bold;
+  font-size: .9em;
+}
+
+.fieldsetBilling .containerInput, 
+.fieldsetShipping .containerInput, 
+.fieldsetPayment .containerInput{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  gap: .5rem;
+}
+
+.fieldsetPayment p{
+  margin-bottom: .5rem;
+}
+
+.fieldsetPayment .containerInputsRadio{
+  margin-bottom: 1rem;
+}
+
+.containerInput label, 
+.containerInput input,
+.fieldsetPayment p{
+  color: var(--black);
+  font-weight: bold;
+  font-size: .8em;
+}
+
+.containerInput input{
+  padding: .5rem;
+  border-radius: 5px;
+  border: 2px solid var(--lightGray);
+}
+
+.containerInput input::placeholder{
+  color: #999999;
+  font-weight: bold;
+}
+
+.containerInputsRadio .inputRadio{
+  border: 2px solid var(--lightGray);
+  border-radius: 5px;
+  margin-bottom: .5rem;
+}
+
+.containerInputsRadio .inputRadio input{
+  margin: 0;
+  accent-color: var(--orange);
+}
+
+.containerInputsRadio .inputRadio label{
+  display: flex;
+  align-items: center;
+  padding: .5rem;
+  gap: 1rem;
+  width: 100%;
+  color: var(--black);
+  font-weight: bold;
+  font-size: .9em;
+}
+
+.containerSummary .listSummary{
+  margin-bottom: 2rem;
+}
+
+.containerSummary .notCartItems{
+  color: #999999;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.containerSummary .summaryTotal,
+.containerSummary .summaryShipping,
+.containerSummary .summaryVat,
+.containerSummary .summaryGrandTotal{
+  text-transform: uppercase;
+  color: #999999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: .5rem;
+}
+
+.containerSummary .summaryGrandTotal{
+  margin-top: 2rem;
+}
+
+.containerSummary .summaryTotal span,
+.containerSummary .summaryShipping span,
+.containerSummary .summaryVat span,
+.containerSummary .summaryGrandTotal span{
+  color: var(--black);
+  font-weight: bold;
+}
+
+.containerSummary .summaryGrandTotal span{
+  color: var(--orange);
+}
+
+.containerSummary .buttonPay{
+  background-color: var(--orange);
+  border: none;
+  color: var(--white);
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 100%;
+  padding-block: 1rem;
+  margin-top: 2rem;  
+  font-size: .8em;
+}
+
+@media (min-width: 468px){
+  
+}
+
+@media (min-width: 1000px){
+  .sectionGoBack{
+    width: 80%;
+  }  
+
+  .container{
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: flex-start;
+    gap: 2rem;
+    width: 80%;
+    padding-bottom: 4rem;
+  }
+
+  .container .containerSummary{
+    height: fit-content;
+    width: 35%;
+  }
+
+  .container .containerForm, .container .containerSummary{
+    padding: 3rem;
+  }
+
+  .container .containerForm{
+    width: 65%;
+  }
+
+  .containerForm .title, .containerSummary .title{
+    margin-bottom: 3rem;
+  }
+
+  .form .fieldsetBilling{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    column-gap: 1rem;
+  }
+
+  .fieldsetBilling legend{
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  .fieldsetBilling .containerInput:nth-of-type(1){
+    grid-column: 1/2;
+    grid-row: 2/3;    
+  }
+
+  .fieldsetBilling .containerInput:nth-of-type(2){
+    grid-column: 2/3;
+    grid-row: 2/3;    
+  }
+
+  .fieldsetBilling .containerInput:nth-of-type(3){
+    grid-column: 1/2;
+    grid-row: 3/4;    
+  }
+
+  .form .fieldsetShipping{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, auto);
+    column-gap: 1rem;
+  }
+
+  .fieldsetShipping legend{
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  .fieldsetShipping .containerInput:nth-of-type(1){
+    grid-column: 1/3;
+    grid-row: 2/3;    
+  }
+
+  .fieldsetShipping .containerInput:nth-of-type(2){
+    grid-column: 1/2;
+    grid-row: 3/4;    
+  }
+
+  .fieldsetShipping .containerInput:nth-of-type(3){
+    grid-column: 2/3;
+    grid-row: 3/4;    
+  }
+
+  .fieldsetShipping .containerInput:nth-of-type(4){
+    grid-column: 1/2;
+    grid-row: 4/5;    
+  }
+
+  .form .fieldsetPayment{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    column-gap: 1rem;
+  }
+
+  .fieldsetPayment legend{
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  .fieldsetPayment p{
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .fieldsetPayment .containerInputsRadio{
+    grid-column: 2/3;
+    grid-row: 2/3;   
+    margin-bottom: 1rem; 
+  }
+
+  .fieldsetPayment .containerInput:nth-of-type(2){
+    grid-column: 1/2;
+    grid-row: 3/4;    
+  }
+
+  .fieldsetPayment .containerInput:last-of-type{
+    grid-column: 2/3;
+    grid-row: 3/4;    
+  }
+
+  .containerInput input, .containerInputsRadio .inputRadio label{
+    padding: 1rem;
+  }
+
+  .containerInputsRadio .inputRadio label:hover{
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+  }
+
+  .containerSummary .buttonPay:hover{
+    background-color: var(--lightOrange);
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+  }
+}
