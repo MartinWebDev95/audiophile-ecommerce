@@ -1,0 +1,85 @@
+.containerSummary{
+  background-color: var(--white);
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.containerSummary .title{
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.containerSummary .listSummary{
+  margin-bottom: 2rem;
+}
+
+.containerSummary .notCartItems{
+  color: #999999;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.containerSummary .summaryTotal,
+.containerSummary .summaryShipping,
+.containerSummary .summaryVat,
+.containerSummary .summaryGrandTotal{
+  text-transform: uppercase;
+  color: #999999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: .5rem;
+}
+
+.containerSummary .summaryGrandTotal{
+  margin-top: 2rem;
+}
+
+.containerSummary .summaryTotal span,
+.containerSummary .summaryShipping span,
+.containerSummary .summaryVat span,
+.containerSummary .summaryGrandTotal span{
+  color: var(--black);
+  font-weight: bold;
+}
+
+.containerSummary .summaryGrandTotal span{
+  color: var(--orange);
+}
+
+.containerSummary .buttonPay{
+  background-color: var(--orange);
+  border: none;
+  color: var(--white);
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 100%;
+  padding-block: 1rem;
+  margin-top: 2rem;  
+  font-size: .8em;
+}
+
+@media (min-width: 468px){
+  
+}
+
+@media (min-width: 1000px){
+  .containerSummary{
+    height: fit-content;
+    padding: 3rem;
+    width: 35%;
+  }
+
+  .containerSummary .title{
+    margin-bottom: 3rem;
+  }
+
+  .containerSummary .buttonPay:hover{
+    background-color: var(--lightOrange);
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+  }
+}
