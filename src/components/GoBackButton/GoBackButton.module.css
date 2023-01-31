@@ -1,0 +1,27 @@
+.buttonGoBack{
+  color: var(--gray);
+  font-size: 1em;
+  background-color: transparent;
+  border: none;
+  margin-block: 2rem;
+  cursor: pointer;
+}
+
+/* TABLET */
+@media (min-width: 480px) {
+  .buttonGoBack{
+    margin-block: 3rem;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1000px){
+  .buttonGoBack{
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+  }
+
+  .buttonGoBack:hover{
+    text-decoration: underline;
+  }
+}
