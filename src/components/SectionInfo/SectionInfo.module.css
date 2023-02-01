@@ -40,6 +40,10 @@
 
 /* DESKTOP */
 @media (min-width: 1000px) {
+  .sectionInfo{
+    padding-block: 6rem;
+  }
+
   .containerSectionInfo{
     width: 80%;
     grid-template-rows: repeat(1, auto);
