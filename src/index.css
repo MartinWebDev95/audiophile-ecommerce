@@ -7,6 +7,7 @@
   --gray: #7D829D;
   --darkGray: #303030;
   --lightGray: #F1F1F1;
+  --red: #ff0000;
 }
 
 html {
@@ -37,6 +38,10 @@ ul, p{
 img, picture{
   max-width: 100%;
   display: block;
+}
+
+input, button{
+  font-family: 'Manrope', sans-serif;
 }
 
 /* Remove arrows from inputs number */
