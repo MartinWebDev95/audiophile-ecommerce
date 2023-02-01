@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
+import { Link } from 'react-router-dom';
 import useCart from '../../hooks/useCart';
 import ProductCart from '../ProductCart/ProductCart';
 import styles from './Cart.module.css';
@@ -12,7 +13,15 @@ function Cart({ openCart, setOpenCart }) {
   const handleClick = (e) => {
     if (!e.target.getAttribute('aria-hidden')) return;
 
+    document.body.style.overflow = 'auto';
     setOpenCart(true);
+  };
+
+  const handleRemoveAll = () => {
+    setCart([]);
+    setTotalCart(0);
+    localStorage.setItem('cart', JSON.stringify([]));
+    localStorage.setItem('totalCart', JSON.stringify(0));
   };
 
   return (
@@ -39,10 +48,7 @@ function Cart({ openCart, setOpenCart }) {
               <button
                 type="button"
                 className={styles.cartRemoveAll}
-                onClick={() => {
-                  setCart([]);
-                  setTotalCart(0);
-                }}
+                onClick={handleRemoveAll}
               >
                 Remove all
               </button>
@@ -54,9 +60,6 @@ function Cart({ openCart, setOpenCart }) {
                   <ProductCart
                     key={item.id}
                     item={item}
-                    idProduct={item.id}
-                    totalCart={totalCart}
-                    setTotalCart={setTotalCart}
                   />
                 ))}
               </ul>
@@ -70,12 +73,12 @@ function Cart({ openCart, setOpenCart }) {
                 </p>
               </div>
 
-              <button
-                type="button"
-                className={styles.buttonCheckout}
+              <Link
+                to="/checkout"
+                className={styles.linkCheckout}
               >
                 Checkout
-              </button>
+              </Link>
             </section>
           </>
         )}

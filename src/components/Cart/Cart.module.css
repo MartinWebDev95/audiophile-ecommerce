@@ -90,11 +90,11 @@
   font-weight: bold;
 }
 
-.containerCheckout .buttonCheckout{
+.containerCheckout .linkCheckout{
   background-color: var(--orange);
   color: var(--white);
   text-transform: uppercase;
-  border: none;
+  text-align: center;
   padding: .5rem 1rem;
   font-weight: bold;
   width: 100%;
@@ -109,8 +109,13 @@
     padding-top: 4rem;
   }
 
-  .containerCheckout .buttonCheckout:hover{
+  .cartHeader .cartRemoveAll:hover{
+    text-decoration: underline;
+  }
+
+  .containerCheckout .linkCheckout:hover{
     background-color: var(--lightOrange);
     transition: all .2s ease-in-out;
   }
+
 }
