@@ -17,6 +17,7 @@
 .containerSummary .notCartItems{
   color: #999999;
   font-weight: bold;
+  margin-top: 2rem;
   margin-bottom: 3rem;
   text-align: center;
 }
@@ -67,13 +68,19 @@
 }
 
 @media (min-width: 1000px){
+  
   .containerSummary{
     height: fit-content;
     padding: 3rem;
     width: 35%;
   }
-
+  
   .containerSummary .title{
+    margin-bottom: 3rem;
+  }
+  
+  .containerSummary .notCartItems{
+    margin-top: 0rem;
     margin-bottom: 3rem;
   }
 

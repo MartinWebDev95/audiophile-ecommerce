@@ -44,7 +44,10 @@ function Summary() {
         <span>{`$ ${(((totalCart * 20) / 100) + totalCart).toFixed(0)}`}</span>
       </p>
 
-      <button type="button" className={styles.buttonPay}>
+      <button
+        type="submit"
+        className={styles.buttonPay}
+      >
         Continue & pay
       </button>
     </aside>
