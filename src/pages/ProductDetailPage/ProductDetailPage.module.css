@@ -12,23 +12,10 @@
   margin: 0 auto;
 }
 
-.buttonGoBack{
-  color: var(--gray);
-  font-size: 1em;
-  background-color: transparent;
-  border: none;
-  margin-block: 2rem;
-  cursor: pointer;
-}
-
 /* TABLET */
 @media (min-width: 480px) {
   .sectionCategories{
     padding-top: 0rem;
-  }
-
-  .buttonGoBack{
-    margin-block: 3rem;
   }
 }
 
@@ -36,13 +23,5 @@
 @media (min-width: 1000px){
   .sectionProductDetail{
     width: 80%;
-  }
-  
-  .buttonGoBack{
-    margin-block: 4rem;
-  }
-
-  .buttonGoBack:hover{
-    text-decoration: underline;
   }
 }

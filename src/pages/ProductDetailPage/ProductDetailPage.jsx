@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import ListCategories from '../../components/ListCategories/ListCategories';
 import SectionInfo from '../../components/SectionInfo/SectionInfo';
@@ -10,11 +10,11 @@ import styles from './ProductDetailPage.module.css';
 import SectionFeatures from '../../components/SectionFeatures/SectionFeatures';
 import SectionImages from '../../components/SectionImages/SectionImages';
 import ListSuggestedProducts from '../../components/ListSuggestedProducts/ListSuggestedProducts';
+import GoBackButton from '../../components/GoBackButton';
 
 function ProductDetailPage() {
   const { productSlug } = useParams();
   const [productDetail, setProductDetail] = useState([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
     setProductDetail(data.products.filter((item) => item.slug === productSlug));
@@ -26,13 +26,7 @@ function ProductDetailPage() {
 
       <main className={styles.main}>
         <section className={styles.sectionProductDetail}>
-          <button
-            type="button"
-            className={styles.buttonGoBack}
-            onClick={() => navigate(-1)}
-          >
-            Go Back
-          </button>
+          <GoBackButton />
 
           {productDetail.map((product) => (
             <Product key={product.id} product={product} detail />
