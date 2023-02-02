@@ -5,7 +5,7 @@ const regexPhone = '([0-9]){9}?';
 const regexZipCode = '([0-9]){5}?';
 const regexEMoneyPin = '([0-9]){4}?';
 
-const initialState = {
+const initialStateForm = {
   name: '',
   email: '',
   phone: '',
@@ -18,32 +18,58 @@ const initialState = {
   eMoneyPin: '',
 };
 
+const initialStateErrors = {
+  name: '',
+  email: '',
+  phone: '',
+  address: '',
+  zipCode: '',
+  city: '',
+  country: '',
+  eMoneyNumber: '',
+  eMoneyPin: '',
+};
+
+const initialStateInputFocus = {
+  name: false,
+  email: false,
+  phone: false,
+  address: false,
+  zipCode: false,
+  city: false,
+  country: false,
+  paymentMethod: false,
+  eMoneyNumber: false,
+  eMoneyPin: false,
+};
+
 function useForm() {
-  const [formData, setFormData] = useState(initialState);
+  const [formData, setFormData] = useState(initialStateForm);
 
-  const [formErrors, setFormErrors] = useState(initialState);
+  const [formErrors, setFormErrors] = useState(initialStateErrors);
 
-  const [inputFocus, setInputFocus] = useState({
-    name: false,
-    email: false,
-    phone: false,
-    address: false,
-    zipCode: false,
-    city: false,
-    country: false,
-    paymentMethod: false,
-    eMoneyNumber: false,
-    eMoneyPin: false,
-  });
+  const [inputFocus, setInputFocus] = useState(initialStateInputFocus);
 
   const [paymentMethod, setPaymentMethod] = useState('e-money');
 
   const handleChangeInput = (e) => {
+    // Select radio button
     if (e.target.name === 'paymentMethod') {
       setPaymentMethod(e.target.value);
     }
 
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    /* When radio button 'Cash on Delivery' is selected, two properties of formData
+       object are removed and when radio button 'e-Money' is selected that two
+       properties come back to the object again */
+    if ((e.target.name === 'paymentMethod') && (e.target.value === 'cash')) {
+      const { eMoneyNumber, eMoneyPin, ...formDataRest } = formData;
+
+      setFormData(formDataRest);
+    } else if ((e.target.name === 'paymentMethod') && (e.target.value === 'e-money')) {
+      setFormData({ ...formData, eMoneyNumber: '', eMoneyPin: '' });
+    } else {
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+    }
   };
 
   // When the input has the focus
