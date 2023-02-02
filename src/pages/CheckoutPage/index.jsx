@@ -44,7 +44,7 @@ function CheckoutPage() {
               handleBlurInput={handleBlurInput}
             />
 
-            <Summary />
+            <Summary formData={formData} formErrors={formErrors} />
           </form>
         </section>
       </main>

@@ -2,7 +2,7 @@ import useCart from '../../hooks/useCart';
 import ProductCart from '../ProductCart/ProductCart';
 import styles from './Summary.module.css';
 
-function Summary() {
+function Summary({ formData, formErrors }) {
   const { cart, totalCart } = useCart();
 
   return (
@@ -47,6 +47,7 @@ function Summary() {
       <button
         type="submit"
         className={styles.buttonPay}
+        disabled={Object.values(formData).includes('') || Object.values(formErrors).some((item) => item !== '')}
       >
         Continue & pay
       </button>
