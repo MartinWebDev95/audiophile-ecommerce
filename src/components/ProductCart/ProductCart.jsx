@@ -1,37 +1,27 @@
-import { useEffect, useRef } from 'react';
 import useCart from '../../hooks/useCart';
 import useQuantityInput from '../../hooks/useQuantityInput';
 import QuantityInput from '../QuantityInput/QuantityInput';
 import styles from './ProductCart.module.css';
 
-function ProductCart({
-  item, idProduct, totalCart, setTotalCart,
-}) {
+function ProductCart({ item, summary = false }) {
   const { cart, setCart } = useCart();
 
   const {
     quantity,
     handleDecrement,
     handleIncrement,
-  } = useQuantityInput(item.quantity);
-
-  const ref = useRef(quantity);
-
-  useEffect(() => {
-    if (ref.current < quantity) {
-      setTotalCart(totalCart + item.price);
-    } else if (ref.current > quantity) {
-      setTotalCart(totalCart - item.price);
-    } else {
-      setTotalCart(totalCart + (item.price * quantity));
-    }
-
-    ref.current = quantity;
-  }, [quantity]);
+  } = useQuantityInput(item.quantity, item);
 
   const handleDeleteItemFromCart = () => {
-    setCart(cart.filter((product) => product.id !== idProduct));
-    setTotalCart(totalCart - (item.price * quantity));
+    setCart({
+      products: cart.products?.filter((product) => product.id !== item.id),
+      totalPriceCart: cart.totalPriceCart - (item.price * quantity),
+    });
+
+    localStorage.setItem('cart', JSON.stringify({
+      products: cart.products?.filter((product) => product.id !== item.id),
+      totalPriceCart: cart.totalPriceCart - (item.price * quantity),
+    }));
   };
 
   return (
@@ -56,11 +46,15 @@ function ProductCart({
           </div>
         </div>
 
-        <QuantityInput
-          handleDecrement={handleDecrement}
-          handleIncrement={handleIncrement}
-          quantity={quantity}
-        />
+        {summary ? (
+          <p className={styles.summaryQuantity}>{`x${item.quantity}`}</p>
+        ) : (
+          <QuantityInput
+            handleDecrement={handleDecrement}
+            handleIncrement={handleIncrement}
+            quantity={quantity}
+          />
+        )}
       </div>
     </li>
   );

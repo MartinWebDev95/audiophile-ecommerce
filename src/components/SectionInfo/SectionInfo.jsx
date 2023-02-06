@@ -7,7 +7,7 @@ function SectionInfo() {
         <picture>
           <source media="(min-width: 1000px)" srcSet="/images/shared/desktop/image-best-gear.jpg" />
           <source media="(min-width: 480px)" srcSet="/images/shared/tablet/image-best-gear.jpg" />
-          <img src="/images/shared/mobile/image-best-gear.jpg" alt="Best Gear" />
+          <img src="/images/shared/mobile/image-best-gear.jpg" alt="Best Gear" loading="lazy" />
         </picture>
         <div>
           <h3>

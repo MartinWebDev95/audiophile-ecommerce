@@ -21,7 +21,15 @@ function Product({ product = {}, detail = false }) {
       price,
     };
 
-    setCart([...cart, productCart]);
+    setCart({
+      products: [...cart.products, productCart],
+      totalPriceCart: cart.totalPriceCart + (productCart.quantity * productCart.price),
+    });
+
+    localStorage.setItem('cart', JSON.stringify({
+      products: [...cart.products, productCart],
+      totalPriceCart: cart.totalPriceCart + (productCart.quantity * productCart.price),
+    }));
   };
 
   return (
@@ -31,7 +39,7 @@ function Product({ product = {}, detail = false }) {
           <picture>
             <source media="(min-width: 1000px)" srcSet={product.categoryImage.desktop} />
             <source media="(min-width: 480px)" srcSet={product.categoryImage.tablet} />
-            <img srcSet={product.categoryImage.mobile} alt={product.shortName} />
+            <img srcSet={product.categoryImage.mobile} alt={product.shortName} loading="lazy" />
           </picture>
 
           <div>
@@ -58,7 +66,7 @@ function Product({ product = {}, detail = false }) {
           <picture>
             <source media="(min-width: 1000px)" srcSet={product.image.desktop} />
             <source media="(min-width: 480px)" srcSet={product.image.tablet} />
-            <img srcSet={product.image.mobile} alt={product.shortName} />
+            <img srcSet={product.image.mobile} alt={product.shortName} loading="lazy" />
           </picture>
 
           <div>
@@ -87,8 +95,11 @@ function Product({ product = {}, detail = false }) {
                 type="button"
                 className={styles.buttonAddToCart}
                 onClick={handleAddProductToCart}
+                disabled={cart.products.some((cartItem) => cartItem.id === product.id)}
               >
-                Add to cart
+                {cart.products.some((cartItem) => cartItem.id === product.id)
+                  ? ('In the cart')
+                  : ('Add to cart')}
               </button>
             </div>
           </div>

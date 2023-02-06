@@ -2,6 +2,10 @@
   margin-bottom: .5rem;
 }
 
+.cartItem:last-of-type{
+  margin-bottom: 0rem;
+}
+
 .containerCartItem, .containerCartItem .infoCartItem{
   display: flex;
   align-items: center;
@@ -18,6 +22,7 @@
 
 .containerCartImage img{
   width: 50px;
+  border-radius: 5px;
 }
 
 .containerCartImage .deleteCartImage{
@@ -28,6 +33,7 @@
   width: 50px;
   height: 50px;
   background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
 }
 
 .containerCartImage .deleteCartImage span{
@@ -57,10 +63,41 @@
   font-size: .8em;
 }
 
+.containerCartItem:has(.summaryQuantity){
+  gap: 4rem;
+}
+
+.containerCartItem .summaryQuantity{
+  color: #999999;
+  font-size: .9em;
+}
+
 @media (min-width: 1000px){
+  .cartItem{
+    margin-bottom: 1rem;
+  }
+
+  .containerCartImage img{
+    width: 55px;
+  }
+  
+  .containerCartImage .deleteCartImage{
+    width: 55px;
+    height: 55px;
+  }
+
   .containerCartImage:hover .deleteCartImage{
     opacity: 1;
     transition: all .2s ease-in-out;
     cursor: pointer;
+  }
+
+  .containerCartImage .deleteCartImage span{
+    top: 26px;
+    left: 12px;
+  }
+
+  .detailCartItem .priceCartItem, .detailCartItem .nameCartItem{
+    font-size: .9em;
   }
 }

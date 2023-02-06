@@ -62,9 +62,9 @@ function Header() {
           if there is any product in the cart */}
           <span
             className={styles.cartProductsNumber}
-            aria-hidden={cart.length === 0}
+            aria-hidden={cart.products?.length === 0}
           >
-            {cart.length !== 0 && cart.length}
+            {cart.products?.length !== 0 && cart.products?.length}
           </span>
         </button>
 

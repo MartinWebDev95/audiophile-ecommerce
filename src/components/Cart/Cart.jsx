@@ -6,9 +6,7 @@ import ProductCart from '../ProductCart/ProductCart';
 import styles from './Cart.module.css';
 
 function Cart({ openCart, setOpenCart }) {
-  const {
-    cart, setCart, totalCart, setTotalCart,
-  } = useCart();
+  const { cart, setCart } = useCart();
 
   const handleClick = (e) => {
     if (!e.target.getAttribute('aria-hidden')) return;
@@ -18,10 +16,15 @@ function Cart({ openCart, setOpenCart }) {
   };
 
   const handleRemoveAll = () => {
-    setCart([]);
-    setTotalCart(0);
-    localStorage.setItem('cart', JSON.stringify([]));
-    localStorage.setItem('totalCart', JSON.stringify(0));
+    setCart({
+      products: [],
+      totalPriceCart: 0,
+    });
+
+    localStorage.setItem('cart', JSON.stringify({
+      products: [],
+      totalPriceCart: 0,
+    }));
   };
 
   return (
@@ -31,17 +34,17 @@ function Cart({ openCart, setOpenCart }) {
       onClick={handleClick}
     >
       <div className={styles.cartContainer}>
-        {cart.length === 0 ? (
+        {cart.products?.length === 0 ? (
           <div className={styles.cartContainerEmpty}>
             <h2 className={styles.cartTitleEmpty}>Your cart is empty</h2>
-            <img className={styles.cartImageEmpty} src="/images/cart/empty-cart.png" alt="Empty Cart" />
+            <img className={styles.cartImageEmpty} src="/images/cart/empty-cart.png" alt="Empty Cart" loading="lazy" />
           </div>
         ) : (
           <>
             <section className={styles.cartHeader}>
               <p className={styles.quantityCart}>
                 Cart (
-                {`${cart.length}`}
+                {`${cart.products?.length}`}
                 )
               </p>
 
@@ -56,7 +59,7 @@ function Cart({ openCart, setOpenCart }) {
 
             <section className={styles.containerCartList}>
               <ul className={styles.listCartItem}>
-                {cart.map((item) => (
+                {cart.products?.map((item) => (
                   <ProductCart
                     key={item.id}
                     item={item}
@@ -69,7 +72,7 @@ function Cart({ openCart, setOpenCart }) {
               <div className={styles.cartTotalPrice}>
                 <p>Total:</p>
                 <p>
-                  {`$ ${totalCart}`}
+                  {`$ ${cart?.totalPriceCart.toLocaleString('en-US')}`}
                 </p>
               </div>
 

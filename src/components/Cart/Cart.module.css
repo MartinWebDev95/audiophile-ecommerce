@@ -109,8 +109,39 @@
     padding-top: 4rem;
   }
 
+  .cartBackground .cartContainer{
+    width: 350px;
+    padding: 2rem;
+  }
+
+  .cartHeader .cartRemoveAll{
+    font-size: 1em;
+  }
+  
+  .cartHeader .quantityCart{
+    font-size: 1.2em;
+  }
+
   .cartHeader .cartRemoveAll:hover{
     text-decoration: underline;
+  }
+
+  
+  .containerCartList{
+    margin-bottom: 1.5rem;
+  }
+
+  .containerCheckout{
+    gap: 1.5rem;
+  }
+
+  .cartTotalPrice p:first-of-type, .cartTotalPrice p:last-of-type{
+    font-size: 1em;
+  }
+
+  .containerCheckout .linkCheckout{
+    font-size: 1.2em;
+    padding: .8rem 1.3rem;
   }
 
   .containerCheckout .linkCheckout:hover{
