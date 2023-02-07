@@ -51,19 +51,23 @@ function ResumeModal({ openResume, setOpenResume }) {
                 )}
             </ul>
 
-            <button
-              type="button"
-              className={styles.btnResumeShowMore}
-              onClick={() => setShowMore(!showMore)}
-            >
-              {showMore
-                ? (
-                  'View less'
-                ) : (
-                  `and ${cart.products.length - 1} other item(s)`
-                )}
-            </button>
+            {cart.products?.length > 1
+              && (
+                <button
+                  type="button"
+                  className={styles.btnResumeShowMore}
+                  onClick={() => setShowMore(!showMore)}
+                >
+                  {showMore
+                    ? (
+                      'View less'
+                    ) : (
+                      `and ${cart.products.length - 1} other item(s)`
+                    )}
+                </button>
+              )}
           </div>
+
           <div className={styles.orderPriceContainer}>
             <p>Grand total</p>
 

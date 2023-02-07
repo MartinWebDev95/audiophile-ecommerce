@@ -61,7 +61,7 @@
 .resumeOrderContainer .btnResumeShowMore{
   border: none;
   font-weight: bold;
-  color: transparent;
+  background-color: transparent;
   margin-bottom: 1rem;
   font-size: .8em;
   text-align: center;
