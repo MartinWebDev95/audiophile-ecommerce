@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import GoBackButton from '../../components/GoBackButton';
@@ -6,8 +6,11 @@ import styles from './CheckoutPage.module.css';
 import Summary from '../../components/Summary';
 import useForm from '../../hooks/useForm';
 import Checkout from '../../components/Checkout';
+import ResumeModal from '../../components/ResumeModal';
 
 function CheckoutPage() {
+  const [openResume, setOpenResume] = useState(true);
+
   const {
     formData,
     formErrors,
@@ -17,7 +20,7 @@ function CheckoutPage() {
     handleChangeInput,
     handleFocusInput,
     handleBlurInput,
-  } = useForm();
+  } = useForm({ setOpenResume });
 
   useEffect(() => {
     document.body.style.overflow = 'auto';
@@ -47,6 +50,8 @@ function CheckoutPage() {
             <Summary formData={formData} formErrors={formErrors} />
           </form>
         </section>
+
+        <ResumeModal openResume={openResume} setOpenResume={setOpenResume} />
       </main>
 
       <Footer />

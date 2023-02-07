@@ -43,7 +43,7 @@ const initialStateInputFocus = {
   eMoneyPin: false,
 };
 
-function useForm() {
+function useForm({ setOpenResume }) {
   const [formData, setFormData] = useState(initialStateForm);
 
   const [formErrors, setFormErrors] = useState(initialStateErrors);
@@ -124,6 +124,9 @@ function useForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setOpenResume(false);
+    window.scrollTo(0, 0);
+    document.body.style.overflow = 'hidden';
   };
 
   return {

@@ -10,7 +10,7 @@ function ProductCart({ item, summary = false }) {
     quantity,
     handleDecrement,
     handleIncrement,
-  } = useQuantityInput(item.quantity, item);
+  } = useQuantityInput(item?.quantity, item);
 
   const handleDeleteItemFromCart = () => {
     setCart({
@@ -33,7 +33,7 @@ function ProductCart({ item, summary = false }) {
             className={styles.containerCartImage}
             onClick={handleDeleteItemFromCart}
           >
-            <img src={item.cartImage} alt={item.shortName} />
+            <img src={item?.cartImage} alt={item?.shortName} />
             <div className={styles.deleteCartImage}>
               <span />
               <span />
@@ -41,13 +41,13 @@ function ProductCart({ item, summary = false }) {
           </button>
 
           <div className={styles.detailCartItem}>
-            <p className={styles.nameCartItem}>{item.shortName}</p>
-            <p className={styles.priceCartItem}>{`$ ${item.price}`}</p>
+            <p className={styles.nameCartItem}>{item?.shortName}</p>
+            <p className={styles.priceCartItem}>{`$ ${item?.price}`}</p>
           </div>
         </div>
 
         {summary ? (
-          <p className={styles.summaryQuantity}>{`x${item.quantity}`}</p>
+          <p className={styles.summaryQuantity}>{`x${item?.quantity}`}</p>
         ) : (
           <QuantityInput
             handleDecrement={handleDecrement}

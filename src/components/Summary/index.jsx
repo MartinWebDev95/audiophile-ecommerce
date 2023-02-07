@@ -36,7 +36,7 @@ function Summary({ formData, formErrors }) {
         Vat (included)
         {' '}
         <span>
-          {`$ ${((cart?.totalPriceCart * 20) / 100).toLocaleString('en-US')}`}
+          {`$ ${((cart.totalPriceCart * 20) / 100).toLocaleString('en-US')}`}
         </span>
       </p>
 
@@ -44,7 +44,7 @@ function Summary({ formData, formErrors }) {
         Grand total
         {' '}
         <span>
-          {`$ ${(((cart?.totalPriceCart * 20) / 100) + cart?.totalPriceCart).toLocaleString('en-US')}`}
+          {`$ ${(((cart.totalPriceCart * 20) / 100) + cart.totalPriceCart).toLocaleString('en-US')}`}
         </span>
       </p>
 
