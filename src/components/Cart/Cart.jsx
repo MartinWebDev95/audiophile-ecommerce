@@ -2,30 +2,13 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import { Link } from 'react-router-dom';
 import useCart from '../../hooks/useCart';
+import useOpenCart from '../../hooks/useOpenCart';
 import ProductCart from '../ProductCart/ProductCart';
 import styles from './Cart.module.css';
 
 function Cart({ openCart, setOpenCart }) {
-  const { cart, setCart } = useCart();
-
-  const handleClick = (e) => {
-    if (!e.target.getAttribute('aria-hidden')) return;
-
-    document.body.style.overflow = 'auto';
-    setOpenCart(true);
-  };
-
-  const handleRemoveAll = () => {
-    setCart({
-      products: [],
-      totalPriceCart: 0,
-    });
-
-    localStorage.setItem('cart', JSON.stringify({
-      products: [],
-      totalPriceCart: 0,
-    }));
-  };
+  const { cart, handleRemoveAll } = useCart();
+  const { handleClick } = useOpenCart(setOpenCart);
 
   return (
     <div

@@ -73,12 +73,12 @@
   transition: all .5s ease-in-out;
 }
 
-.navigation[aria-hidden="false"]{
+.navigation[aria-hidden="true"]{
   height: 0vh;
   overflow: auto;
 }
 
-.navigation[aria-hidden="true"]{
+.navigation[aria-hidden="false"]{
   height: 100vh;
   overflow: hidden;
 }

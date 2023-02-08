@@ -1,29 +1,17 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import useCart from '../../hooks/useCart';
 import ListCategories from '../ListCategories/ListCategories';
 import Cart from '../Cart/Cart';
+import useCart from '../../hooks/useCart';
 import styles from './Header.module.css';
+import useOpenMenu from '../../hooks/useOpenMenu';
+import useOpenCart from '../../hooks/useOpenCart';
 
-function Header() {
-  const [openMenu, setOpenMenu] = useState(false);
-  const [openCart, setOpenCart] = useState(true);
+function Header({
+  openMenu, setOpenMenu, openCart, setOpenCart,
+}) {
+  const { handleOpenMenu } = useOpenMenu(openMenu, setOpenMenu);
+  const { handleOpenCart } = useOpenCart(setOpenCart);
   const { cart } = useCart();
-
-  const handleOpenMenu = () => {
-    setOpenMenu(!openMenu);
-
-    if (openMenu) {
-      document.body.style.overflow = 'auto';
-    } else {
-      document.body.style.overflow = 'hidden';
-    }
-  };
-
-  const handleOpenCart = () => {
-    document.body.style.overflow = 'hidden';
-    setOpenCart(false);
-  };
 
   return (
     <header className={styles.header}>
@@ -31,7 +19,7 @@ function Header() {
         <button
           type="button"
           onClick={handleOpenMenu}
-          className={`${styles.menuMobile} ${openMenu ? styles.active : ''}`}
+          className={`${styles.menuMobile} ${openMenu ? '' : styles.active}`}
         >
           <span />
           <span />
