@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Header from '../../components/Header/Header';
 import ListCategories from '../../components/ListCategories/ListCategories';
 import SectionInfo from '../../components/SectionInfo/SectionInfo';
-import Footer from '../../components/Footer/Footer';
 import data from '../../products.json';
 import Product from '../../components/Product/Product';
 import styles from './ProductDetailPage.module.css';
@@ -21,37 +19,31 @@ function ProductDetailPage() {
   }, [productSlug]);
 
   return (
-    <>
-      <Header />
+    <main className={styles.main}>
+      <section className={styles.sectionProductDetail}>
+        <GoBackButton />
 
-      <main className={styles.main}>
-        <section className={styles.sectionProductDetail}>
-          <GoBackButton />
+        {productDetail.map((product) => (
+          <Product key={product.id} product={product} detail />
+        ))}
+      </section>
 
-          {productDetail.map((product) => (
-            <Product key={product.id} product={product} detail />
-          ))}
-        </section>
+      <SectionFeatures
+        key={productDetail[0]?.id}
+        features={productDetail[0]?.features}
+        includedItems={productDetail[0]?.includedItems}
+      />
 
-        <SectionFeatures
-          key={productDetail[0]?.id}
-          features={productDetail[0]?.features}
-          includedItems={productDetail[0]?.includedItems}
-        />
+      <SectionImages gallery={productDetail[0]?.gallery} />
 
-        <SectionImages gallery={productDetail[0]?.gallery} />
+      <ListSuggestedProducts suggestedProducts={productDetail[0]?.others} />
 
-        <ListSuggestedProducts suggestedProducts={productDetail[0]?.others} />
+      <section className={styles.sectionCategories}>
+        <ListCategories />
+      </section>
 
-        <section className={styles.sectionCategories}>
-          <ListCategories />
-        </section>
-
-        <SectionInfo />
-      </main>
-
-      <Footer />
-    </>
+      <SectionInfo />
+    </main>
   );
 }
 

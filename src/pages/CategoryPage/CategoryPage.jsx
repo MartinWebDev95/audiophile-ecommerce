@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
@@ -10,18 +11,14 @@ function CategoryPage() {
   const { pathname } = useLocation();
 
   return (
-    <>
-      <Header />
-      <main className={styles.main}>
-        <h1 className={styles.title}>{pathname.substring(1).toUpperCase()}</h1>
-        <ListProducts category={pathname.substring(1)} />
-        <section className={styles.sectionCategories}>
-          <ListCategories />
-        </section>
-        <SectionInfo />
-      </main>
-      <Footer />
-    </>
+    <main className={styles.main}>
+      <h1 className={styles.title}>{pathname.substring(1).toUpperCase()}</h1>
+      <ListProducts category={pathname.substring(1)} />
+      <section className={styles.sectionCategories}>
+        <ListCategories />
+      </section>
+      <SectionInfo />
+    </main>
   );
 }
 

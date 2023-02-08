@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react';
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
 import GoBackButton from '../../components/GoBackButton';
 import styles from './CheckoutPage.module.css';
 import Summary from '../../components/Summary';
@@ -27,35 +25,29 @@ function CheckoutPage() {
   }, []);
 
   return (
-    <>
-      <Header />
+    <main className={styles.main}>
+      <section className={styles.sectionGoBack}>
+        <GoBackButton />
+      </section>
 
-      <main className={styles.main}>
-        <section className={styles.sectionGoBack}>
-          <GoBackButton />
-        </section>
+      <section className={styles.container}>
+        <form action="#" className={styles.form} onSubmit={handleSubmit}>
+          <Checkout
+            formData={formData}
+            formErrors={formErrors}
+            inputFocus={inputFocus}
+            paymentMethod={paymentMethod}
+            handleChangeInput={handleChangeInput}
+            handleFocusInput={handleFocusInput}
+            handleBlurInput={handleBlurInput}
+          />
 
-        <section className={styles.container}>
-          <form action="#" className={styles.form} onSubmit={handleSubmit}>
-            <Checkout
-              formData={formData}
-              formErrors={formErrors}
-              inputFocus={inputFocus}
-              paymentMethod={paymentMethod}
-              handleChangeInput={handleChangeInput}
-              handleFocusInput={handleFocusInput}
-              handleBlurInput={handleBlurInput}
-            />
+          <Summary formData={formData} formErrors={formErrors} />
+        </form>
+      </section>
 
-            <Summary formData={formData} formErrors={formErrors} />
-          </form>
-        </section>
-
-        <ResumeModal openResume={openResume} setOpenResume={setOpenResume} />
-      </main>
-
-      <Footer />
-    </>
+      <ResumeModal openResume={openResume} setOpenResume={setOpenResume} />
+    </main>
   );
 }
 
