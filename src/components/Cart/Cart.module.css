@@ -27,7 +27,7 @@
 }
 
 .cartContainerEmpty .cartImageEmpty{
-  width: fit-content;
+  width: 60px;
   height: 60px;
 }
 
@@ -35,6 +35,7 @@
   display: grid;
   align-items: center;
   justify-content: center;
+  overflow-y: scroll;
 }
 
 .cartBackground[aria-hidden="true"]{
