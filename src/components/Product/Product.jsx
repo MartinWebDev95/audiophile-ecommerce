@@ -66,7 +66,7 @@ function Product({ product = {}, detail = false }) {
           <picture>
             <source media="(min-width: 1000px)" srcSet={product.image.desktop} />
             <source media="(min-width: 480px)" srcSet={product.image.tablet} />
-            <img srcSet={product.image.mobile} alt={product.shortName} loading="lazy" />
+            <img srcSet={product.image.mobile} alt={product.shortName} />
           </picture>
 
           <div>
