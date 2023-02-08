@@ -7,7 +7,10 @@ function ListCategories({ type = '' }) {
       <li className={styles.navigationItem} type={type}>
         <NavLink to="/">
           {({ isActive }) => (
-            <span className={`${styles.itemTitle} ${isActive ? styles.linkActive : ''}`} type={type}>
+            <span
+              className={`${styles.itemTitle} ${isActive ? styles.linkActive : ''}`}
+              type={type}
+            >
               Home
             </span>
           )}
@@ -18,10 +21,16 @@ function ListCategories({ type = '' }) {
           {({ isActive }) => (
             <>
               <img src="/images/shared/desktop/image-headphones.png" alt="Headphones" loading="lazy" />
-              <span className={`${styles.itemTitle} ${isActive ? styles.linkActive : ''}`} type={type}>
+              <span
+                className={`${styles.itemTitle} ${isActive ? styles.linkActive : ''}`}
+                type={type}
+              >
                 Headphones
               </span>
-              <span className={styles.itemShop} type={type}>
+              <span
+                className={styles.itemShop}
+                type={type}
+              >
                 Shop
                 <svg width="8" height="12" xmlns="http://www.w3.org/2000/svg"><path d="M1.322 1l5 5-5 5" stroke="#D87D4A" strokeWidth="2" fill="none" fillRule="evenodd" /></svg>
               </span>
@@ -34,10 +43,16 @@ function ListCategories({ type = '' }) {
           {({ isActive }) => (
             <>
               <img src="/images/shared/desktop/image-speakers.png" alt="Speakers" loading="lazy" />
-              <span className={`${styles.itemTitle} ${isActive ? styles.linkActive : ''}`} type={type}>
+              <span
+                className={`${styles.itemTitle} ${isActive ? styles.linkActive : ''}`}
+                type={type}
+              >
                 Speakers
               </span>
-              <span className={styles.itemShop} type={type}>
+              <span
+                className={styles.itemShop}
+                type={type}
+              >
                 Shop
                 <svg width="8" height="12" xmlns="http://www.w3.org/2000/svg"><path d="M1.322 1l5 5-5 5" stroke="#D87D4A" strokeWidth="2" fill="none" fillRule="evenodd" /></svg>
               </span>
@@ -50,10 +65,16 @@ function ListCategories({ type = '' }) {
           {({ isActive }) => (
             <>
               <img src="/images/shared/desktop/image-earphones.png" alt="Earphones" loading="lazy" />
-              <span className={`${styles.itemTitle} ${isActive ? styles.linkActive : ''}`} type={type}>
+              <span
+                className={`${styles.itemTitle} ${isActive ? styles.linkActive : ''}`}
+                type={type}
+              >
                 Earphones
               </span>
-              <span className={styles.itemShop} type={type}>
+              <span
+                className={styles.itemShop}
+                type={type}
+              >
                 Shop
                 <svg width="8" height="12" xmlns="http://www.w3.org/2000/svg"><path d="M1.322 1l5 5-5 5" stroke="#D87D4A" strokeWidth="2" fill="none" fillRule="evenodd" /></svg>
               </span>
