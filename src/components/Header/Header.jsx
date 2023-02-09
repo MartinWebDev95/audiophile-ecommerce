@@ -2,15 +2,15 @@ import { Link } from 'react-router-dom';
 import ListCategories from '../ListCategories/ListCategories';
 import Cart from '../Cart/Cart';
 import styles from './Header.module.css';
-import useOpenMenu from '../../hooks/useOpenMenu';
 import useCartContext from '../../hooks/useCartContext';
 import useCart from '../../hooks/useCart';
+import useMenu from '../../hooks/useMenu';
 
 function Header({
   openMenu, setOpenMenu, openCart, setOpenCart,
 }) {
   const { cart, setCart } = useCartContext();
-  const { handleOpenMenu } = useOpenMenu(openMenu, setOpenMenu);
+  const { handleOpenMenu } = useMenu(openMenu, setOpenMenu, setOpenCart);
   const { handleOpenCart } = useCart(setCart, setOpenCart);
 
   return (
