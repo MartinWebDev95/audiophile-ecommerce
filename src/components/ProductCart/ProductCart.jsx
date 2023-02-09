@@ -1,28 +1,15 @@
 import useCart from '../../hooks/useCart';
+import useCartContext from '../../hooks/useCartContext';
 import useQuantityInput from '../../hooks/useQuantityInput';
 import QuantityInput from '../QuantityInput/QuantityInput';
 import styles from './ProductCart.module.css';
 
 function ProductCart({ item, summary = false }) {
-  const { cart, setCart } = useCart();
+  const { cart, setCart } = useCartContext();
 
-  const {
-    quantity,
-    handleDecrement,
-    handleIncrement,
-  } = useQuantityInput(item?.quantity, item);
+  const { quantity, handleDecrement, handleIncrement } = useQuantityInput(item?.quantity, item);
 
-  const handleDeleteItemFromCart = () => {
-    setCart({
-      products: cart.products?.filter((product) => product.id !== item.id),
-      totalPriceCart: cart.totalPriceCart - (item.price * quantity),
-    });
-
-    localStorage.setItem('cart', JSON.stringify({
-      products: cart.products?.filter((product) => product.id !== item.id),
-      totalPriceCart: cart.totalPriceCart - (item.price * quantity),
-    }));
-  };
+  const { handleDeleteItemFromCart } = useCart(setCart, () => {}, cart, item, quantity);
 
   return (
     <li className={styles.cartItem}>

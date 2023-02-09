@@ -1,36 +1,14 @@
 import { Link } from 'react-router-dom';
 import useCart from '../../hooks/useCart';
+import useCartContext from '../../hooks/useCartContext';
 import useQuantityInput from '../../hooks/useQuantityInput';
 import QuantityInput from '../QuantityInput/QuantityInput';
 import styles from './Product.module.css';
 
 function Product({ product = {}, detail = false }) {
-  const { cart, setCart } = useCart();
+  const { cart, setCart } = useCartContext();
   const { quantity, handleIncrement, handleDecrement } = useQuantityInput();
-
-  const handleAddProductToCart = () => {
-    const {
-      id, cartImage, shortName, price,
-    } = product;
-
-    const productCart = {
-      id,
-      cartImage,
-      shortName,
-      quantity,
-      price,
-    };
-
-    setCart({
-      products: [...cart.products, productCart],
-      totalPriceCart: cart.totalPriceCart + (productCart.quantity * productCart.price),
-    });
-
-    localStorage.setItem('cart', JSON.stringify({
-      products: [...cart.products, productCart],
-      totalPriceCart: cart.totalPriceCart + (productCart.quantity * productCart.price),
-    }));
-  };
+  const { handleAddProductToCart } = useCart(setCart, () => {}, cart, product, quantity);
 
   return (
     !detail

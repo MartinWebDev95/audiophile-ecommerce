@@ -1,17 +1,17 @@
 import { Link } from 'react-router-dom';
 import ListCategories from '../ListCategories/ListCategories';
 import Cart from '../Cart/Cart';
-import useCart from '../../hooks/useCart';
 import styles from './Header.module.css';
 import useOpenMenu from '../../hooks/useOpenMenu';
-import useOpenCart from '../../hooks/useOpenCart';
+import useCartContext from '../../hooks/useCartContext';
+import useCart from '../../hooks/useCart';
 
 function Header({
   openMenu, setOpenMenu, openCart, setOpenCart,
 }) {
+  const { cart, setCart } = useCartContext();
   const { handleOpenMenu } = useOpenMenu(openMenu, setOpenMenu);
-  const { handleOpenCart } = useOpenCart(setOpenCart);
-  const { cart } = useCart();
+  const { handleOpenCart } = useCart(setCart, setOpenCart);
 
   return (
     <header className={styles.header}>

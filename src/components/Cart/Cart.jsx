@@ -1,20 +1,20 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import { Link } from 'react-router-dom';
+import useCartContext from '../../hooks/useCartContext';
 import useCart from '../../hooks/useCart';
-import useOpenCart from '../../hooks/useOpenCart';
 import ProductCart from '../ProductCart/ProductCart';
 import styles from './Cart.module.css';
 
 function Cart({ openCart, setOpenCart }) {
-  const { cart, handleRemoveAll } = useCart();
-  const { handleClick } = useOpenCart(setOpenCart);
+  const { cart, setCart } = useCartContext();
+  const { handleCloseCart, handleRemoveAll } = useCart(setCart, setOpenCart);
 
   return (
     <div
       className={styles.cartBackground}
       aria-hidden={openCart}
-      onClick={handleClick}
+      onClick={handleCloseCart}
     >
       <div className={styles.cartContainer}>
         {cart.products?.length === 0
