@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import useCart from '../../hooks/useCart';
+import useCartContext from '../../hooks/useCartContext';
 import ProductCart from '../ProductCart/ProductCart';
 import styles from './ResumeModal.module.css';
 
 function ResumeModal({ openResume, setOpenResume }) {
-  const { cart, setCart } = useCart();
+  const { cart, setCart } = useCartContext();
   const [showMore, setShowMore] = useState(false);
   const navigate = useNavigate();
 

@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import useCart from './useCart';
+import useCartContext from './useCartContext';
 
 function useQuantityInput(quantityProduct = 1, product = {}) {
-  const { cart, setCart } = useCart();
+  const { cart, setCart } = useCartContext();
   const [quantity, setQuantity] = useState(quantityProduct);
 
   const handleIncrement = () => {

@@ -1,9 +1,9 @@
-import useCart from '../../hooks/useCart';
+import useCartContext from '../../hooks/useCartContext';
 import ProductCart from '../ProductCart/ProductCart';
 import styles from './Summary.module.css';
 
 function Summary({ formData, formErrors }) {
-  const { cart } = useCart();
+  const { cart } = useCartContext();
 
   return (
     <aside className={styles.containerSummary}>

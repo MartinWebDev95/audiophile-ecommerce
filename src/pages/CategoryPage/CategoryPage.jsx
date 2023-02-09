@@ -1,7 +1,4 @@
-import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import Footer from '../../components/Footer/Footer';
-import Header from '../../components/Header/Header';
 import ListCategories from '../../components/ListCategories/ListCategories';
 import ListProducts from '../../components/ListProducts/ListProducts';
 import SectionInfo from '../../components/SectionInfo/SectionInfo';

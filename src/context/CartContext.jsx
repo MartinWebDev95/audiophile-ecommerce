@@ -13,20 +13,8 @@ function CartProvider({ children }) {
     }
   }, []);
 
-  const handleRemoveAll = () => {
-    setCart({
-      products: [],
-      totalPriceCart: 0,
-    });
-
-    localStorage.setItem('cart', JSON.stringify({
-      products: [],
-      totalPriceCart: 0,
-    }));
-  };
-
   const value = useMemo(() => ({
-    cart, setCart, handleRemoveAll,
+    cart, setCart,
   }), [cart]);
 
   return (
