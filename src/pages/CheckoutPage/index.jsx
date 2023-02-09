@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import GoBackButton from '../../components/GoBackButton';
 import styles from './CheckoutPage.module.css';
 import Summary from '../../components/Summary';
@@ -19,10 +19,6 @@ function CheckoutPage() {
     handleFocusInput,
     handleBlurInput,
   } = useForm({ setOpenResume });
-
-  useEffect(() => {
-    document.body.style.overflow = 'auto';
-  }, []);
 
   return (
     <main className={styles.main}>
