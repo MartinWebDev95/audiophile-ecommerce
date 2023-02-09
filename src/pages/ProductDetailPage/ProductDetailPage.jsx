@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ListCategories from '../../components/ListCategories/ListCategories';
 import SectionInfo from '../../components/SectionInfo/SectionInfo';
@@ -9,14 +8,11 @@ import SectionFeatures from '../../components/SectionFeatures/SectionFeatures';
 import SectionImages from '../../components/SectionImages/SectionImages';
 import ListSuggestedProducts from '../../components/ListSuggestedProducts/ListSuggestedProducts';
 import GoBackButton from '../../components/GoBackButton';
+import useProduct from '../../hooks/useProduct';
 
 function ProductDetailPage() {
   const { productSlug } = useParams();
-  const [productDetail, setProductDetail] = useState([]);
-
-  useEffect(() => {
-    setProductDetail(data.products.filter((item) => item.slug === productSlug));
-  }, [productSlug]);
+  const { productDetail } = useProduct(data, productSlug);
 
   return (
     <main className={styles.main}>
