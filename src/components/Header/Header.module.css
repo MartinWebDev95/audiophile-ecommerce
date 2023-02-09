@@ -80,7 +80,7 @@
 
 .navigation[aria-hidden="false"]{
   height: 100vh;
-  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .cart{
@@ -120,12 +120,27 @@
   }
 
   .navigation{
-    border-radius: 0px 0px 10px 10px;
+    background-color: transparent;
   }
 
-  .navigation[aria-hidden="true"]{
-    height: 40vh;
+  .navigation[aria-hidden="false"]{
     overflow: hidden;
+  }
+  
+  .navigation[aria-hidden="true"]::after, .navigation[aria-hidden="false"]::after{
+    content: '';
+    display: block;
+    width: 100%;
+    background-color: rgba(0,0,0, .7);
+    transition: all .5s ease-in-out;
+  }
+
+  .navigation[aria-hidden="true"]::after{
+    height: 0vh;
+  }
+
+  .navigation[aria-hidden="false"]::after{
+    height: 100vh;
   }
 
   .logo{
@@ -153,7 +168,7 @@
     margin-bottom: 0;
   }
 
-  .navigation[aria-hidden="false"], .navigation[aria-hidden="true"]{
+  .navigation[aria-hidden="false"], .navigation[aria-hidden="true"], .navigation[aria-hidden="true"]::after, .navigation[aria-hidden="false"]::after{
     height: auto;
   }
 
