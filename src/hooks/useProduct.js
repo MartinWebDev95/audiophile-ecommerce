@@ -8,7 +8,13 @@ function useProduct(data = [], dependence = '') {
 
   useEffect(() => {
     if (CATEGORIES.includes(dependence)) {
-      setProducts(data.products.filter((product) => product.category === dependence));
+      const productsFilteredByCategory = data.products.filter(
+        (product) => product.category === dependence,
+      );
+
+      const productsOrderedByProperty = productsFilteredByCategory.sort((a, b) => b.new - a.new);
+
+      setProducts(productsOrderedByProperty);
     } else {
       setProductDetail(data.products.filter((item) => item.slug === dependence));
     }
