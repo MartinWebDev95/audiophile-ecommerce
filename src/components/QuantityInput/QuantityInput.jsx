@@ -3,8 +3,8 @@ import styles from './QuantityInput.module.css';
 function QuantityInput({ handleIncrement, handleDecrement, quantity }) {
   return (
     <div className={styles.containerQuantityInput}>
-      <button type="button" onClick={handleIncrement}>
-        +
+      <button type="button" onClick={handleDecrement}>
+        -
       </button>
 
       <input
@@ -15,8 +15,8 @@ function QuantityInput({ handleIncrement, handleDecrement, quantity }) {
         readOnly
       />
 
-      <button type="button" onClick={handleDecrement}>
-        -
+      <button type="button" onClick={handleIncrement}>
+        +
       </button>
     </div>
   );
